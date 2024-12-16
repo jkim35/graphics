@@ -12,16 +12,17 @@ public class SGRandomwalk {
         int yIncrease = (int)((Math.random())*20)-10;
         player.translate(xIncrease,yIncrease);
         double distance = Math.sqrt(Math.pow(player.getX()-150,2)+Math.pow(player.getY()-150,2));
-        System.out.println(distance);
-        while(distance<=110){
+        int i = 1;
+        while(distance<=10+outside.getWidth()){
              xIncrease = (int)((Math.random())*20)-10;
          yIncrease = (int)((Math.random())*20)-10;
         player.translate(xIncrease,yIncrease);
         try { Thread.sleep(100);}
         catch(Exception ex) {};
          distance = Math.sqrt(Math.pow(player.getX()-150,2)+Math.pow(player.getY()-150,2));
-        System.out.println(distance);
-        
+        i++;
+        System.out.println(i);
+        outside.grow(0.2,0.2);
 
         }
     }
